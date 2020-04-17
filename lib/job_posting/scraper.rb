@@ -4,6 +4,8 @@ class JobObjects
 
     @@all = []
 
+    # Start scraper logic
+
     def scraper
 
         all = []
@@ -32,7 +34,7 @@ class JobObjects
             page += 1
         end
 
-        binding.pry
+        # binding.pry
     end
 
     def self.all 
