@@ -2,6 +2,8 @@
 class JobObjects
 
 
+    @@all = []
+
     def scraper
 
         all = []
@@ -24,13 +26,19 @@ class JobObjects
                     location: job_listing.css('div.location').text,
                 }
                 
-                all << job
+                @@all << job
+                puts "Added #{job[:title]}"
             end
             page += 1
         end
 
         binding.pry
     end
+
+    def self.all 
+        @@all 
+    end
+
     
 end
 
