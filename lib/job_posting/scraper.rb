@@ -14,17 +14,21 @@ class JobObjects
 
         page = 1
         per_page = job_cards.count #Counts the number of jobs on a page
-        last_page = 2
+        last_page = 1
 
-        job_cards.each do |job_listing|
-            job = {
-                title: job_listing.css('h2.title').text,
-                company: job_listing.css('span.company').text,
-                location: job_listing.css('div.location').text,
-            }
-            
-            all << job
+        while page <= last_page
+            job_cards.each do |job_listing|
+                job = {
+                    title: job_listing.css('h2.title').text.strip,
+                    company: job_listing.css('span.company').text.strip,
+                    location: job_listing.css('div.location').text,
+                }
+                
+                all << job
+            end
+            page += 1
         end
+
         binding.pry
     end
     
