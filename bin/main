@@ -2,5 +2,6 @@
 
 require_relative '../lib/environment'
 
-JobObjects.new.scraper
+Cli.new.run
+
 

@@ -29,13 +29,21 @@ class JobObjects
                 }
                 
                 @@all << job
-                puts "Added #{job[:title]}"
+                # puts "Added #{job[:title]}"
             end
             page += 1
         end
 
         # binding.pry
     end
+
+    def self.all_jobs
+        @@all.each do |job|
+            puts "#{job[:title]}"
+        end
+
+    end
+
 
     def self.all 
         @@all 
