@@ -1,3 +1,0 @@
-require 'HTTPary'
-require 'nokogiri'
-require 'pry'
