@@ -37,6 +37,17 @@ class JobObjects
         # binding.pry
     end
 
+    def self.random
+        rand_num = rand(10)
+        job = @@all[rand_num]
+        puts "#{job[:title]}"
+        puts "#{job[:company]}"
+        puts "#{job[:location]}"
+
+
+    end
+
+
     def self.all_jobs
         @@all.each do |job|
             puts "#{job[:title]}"
