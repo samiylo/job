@@ -40,6 +40,8 @@ class Cli
                 usr_input = gets.strip
                 puts "=================================================="
                 JobObjects.search(usr_input)
+                # JobObjects.description(usr_input)
+
 
             elsif user_input == "3"
                 random_job

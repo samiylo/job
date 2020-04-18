@@ -39,11 +39,6 @@ class JobObjects
         # binding.pry
     end
 
-    def self.description(link)
-        url = link
-        
-
-    end
 
 
     def self.random
@@ -52,7 +47,22 @@ class JobObjects
         puts "#{job[:title]}"
         puts "#{job[:company]}"
         puts "#{job[:location]}"
+        
 
+
+    end
+
+    def self.description(job_name)
+
+        @@all.each do |job|
+            if job_name == job[:title]
+
+                url = job[:url]
+                raw_html = HTTParty.get(url)
+                parsed_page = Nokogiri::HTML(raw_html)
+                description = job_description.css('div#jobDescriptionText').text
+            end
+        end
 
     end
 
