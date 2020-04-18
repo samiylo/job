@@ -22,6 +22,7 @@ class Cli
         puts "Hello! Welcome to my Kingwood job search app."
         puts "Loading jobs..."
         JobObjects.new.scraper
+
         menu 
 
 
@@ -33,8 +34,11 @@ class Cli
                 JobObjects.all_jobs
                 menu
             elsif user_input == "2"
+                JobObjects.all_jobs
+                puts "=================================================="
                 puts "Please enter a job name:"
                 usr_input = gets.strip
+                puts "=================================================="
                 JobObjects.search(usr_input)
 
             elsif user_input == "3"
@@ -45,6 +49,7 @@ class Cli
                 menu
             else
                 puts "Please pick an option from the menu."
+                puts "=================================================="
 
             end
 

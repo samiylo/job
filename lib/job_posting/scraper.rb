@@ -50,9 +50,12 @@ class JobObjects
     def self.search(job_name)
         @@all.each do |job|
             if job_name == job[:title]
+                puts "=================================================="
                 puts "#{job[:title]}"
                 puts "#{job[:company]}"
                 puts "#{job[:location]}"
+                puts "=================================================="
+                
             end
 
         end
