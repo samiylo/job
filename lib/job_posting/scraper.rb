@@ -47,10 +47,25 @@ class JobObjects
 
     end
 
+    def self.search(job_name)
+        @@all.each do |job|
+            if job_name == job[:title]
+                puts "#{job[:title]}"
+                puts "#{job[:company]}"
+                puts "#{job[:location]}"
+            end
+
+        end
+        
+    end
+
+
 
     def self.all_jobs
+        counter = 1
         @@all.each do |job|
-            puts "#{job[:title]}"
+            puts "#{counter} - #{job[:title]}"
+            counter += 1
         end
 
     end

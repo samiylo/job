@@ -33,6 +33,9 @@ class Cli
                 JobObjects.all_jobs
                 menu
             elsif user_input == "2"
+                puts "Please enter a job name:"
+                usr_input = gets.strip
+                JobObjects.search(usr_input)
 
             elsif user_input == "3"
                 random_job
