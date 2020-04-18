@@ -62,6 +62,11 @@ class Cli
                 
             elsif user_input == "menu"
                 menu
+
+            elsif user_input == "exit"
+                puts "=================================================="
+                puts "Goodbye!"
+                puts "=================================================="
             else
                 puts "Please pick an option from the menu."
                 puts "=================================================="
