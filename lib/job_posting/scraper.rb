@@ -26,7 +26,9 @@ class JobObjects
                     title: job_listing.css('h2.title').text.strip,
                     company: job_listing.css('span.company').text.strip,
                     location: job_listing.css('div.location').text,
+                    url: "https://www.indeed.com/" + job_listing.css('a')[0].attributes['href'].value
                 }
+                
                 
                 @@all << job
                 # puts "Added #{job[:title]}"
@@ -36,6 +38,13 @@ class JobObjects
 
         # binding.pry
     end
+
+    def self.description(link)
+        url = link
+        
+
+    end
+
 
     def self.random
         rand_num = rand(10)
