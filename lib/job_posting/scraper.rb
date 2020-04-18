@@ -56,11 +56,12 @@ class JobObjects
 
         @@all.each do |job|
             if job_name == job[:title]
-
                 url = job[:url]
                 raw_html = HTTParty.get(url)
                 parsed_page = Nokogiri::HTML(raw_html)
-                description = job_description.css('div#jobDescriptionText').text
+                description = parsed_page.css('div#jobDescriptionText').text.strip
+                
+                puts description
             end
         end
 

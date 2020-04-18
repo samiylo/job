@@ -40,8 +40,21 @@ class Cli
                 usr_input = gets.strip
                 puts "=================================================="
                 JobObjects.search(usr_input)
-                # JobObjects.description(usr_input)
+                puts "=================================================="
+                puts "Would you like to see the Discription and Requirements? Type yes or no."
+                go_deep = gets.strip.downcase
+                if go_deep == "yes"
+                    JobObjects.description(usr_input)
+                    puts "=================================================="
+                    puts "Type MENU for menu."
+                    puts "=================================================="
+                elsif go_deep == "no"
+                    puts "Returning you to menu..."
+                    menu
+                else
+                    puts "Please type yes or no."
 
+                end
 
             elsif user_input == "3"
                 random_job
