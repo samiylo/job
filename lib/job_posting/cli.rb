@@ -31,20 +31,20 @@ class Cli
         while user_input != "exit"
             user_input = gets.strip.downcase
             if user_input == "1"
-                JobObjects.all_jobs
+                JobObjects::Job.all
                 menu
             elsif user_input == "2"
-                JobObjects.all_jobs
+                JobObjects::Job.all
                 puts "=================================================="
                 puts "Please enter a job name:"
                 usr_input = gets.strip
                 puts "=================================================="
-                JobObjects.search(usr_input)
+                JobObjects::Job.search(usr_input)
                 puts "=================================================="
                 puts "Would you like to see the Discription and Requirements? Type yes or no."
                 go_deep = gets.strip.downcase
                 if go_deep == "yes"
-                    JobObjects.description(usr_input)
+                    JobObjects::Job.description(usr_input)
                     puts "=================================================="
                     puts "Type MENU for menu."
                     puts "=================================================="
@@ -57,7 +57,7 @@ class Cli
                 end
 
             elsif user_input == "3"
-                random_job
+                JobObjects::Job.random
                 menu
                 
             elsif user_input == "menu"
